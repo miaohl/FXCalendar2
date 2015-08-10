@@ -104,6 +104,25 @@ class CalendarMonthView: UIView {
     }
     
     func reloadData() {
+        
+//        for view in weeksViews! {
+//            view.removeFromSuperview()
+//        }
+//        
+//        
+//        var views: NSMutableArray = NSMutableArray.new()
+//        
+//        weekdaysView = CalendarMonthWeekDaysView.new()
+//        weekdaysView?.calendarManager = self.calendarManager
+//        self.addSubview(weekdaysView!)
+//        
+//        for(var i: Int = 0; i < 6; ++i) {
+//            var view: UIView = CalendarWeekView.new()
+//            views.addObject(view)
+//            self.addSubview(view)
+//        }
+        
+        //weeksViews = views as NSArray
         for view in weeksViews! {
             (view as! CalendarWeekView).reloadData()
             if self.calendarManager!.calendarAppearance!.isWeekMode! {

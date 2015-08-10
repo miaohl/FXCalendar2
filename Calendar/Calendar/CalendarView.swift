@@ -106,6 +106,9 @@ class CalendarView: UIView, UIScrollViewDelegate {
     }
     
     func updatePage() {
+        
+        
+        
         var pageWidth: CGFloat = CGRectGetWidth(self.contentView!.frame)
         var fractionalPage: CGFloat = self.contentView!.contentOffset.x / pageWidth
         var currentPage = Int(round(fractionalPage))

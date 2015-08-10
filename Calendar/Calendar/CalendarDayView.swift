@@ -38,7 +38,7 @@ class CalendarDayView: UIView {
         }
         set {
             self._isOtherMonth = newValue
-            self.setSelected(isSelected, animated: false)
+            //self.setSelected(isSelected, animated: false)
         }
     }
     
@@ -153,6 +153,11 @@ class CalendarDayView: UIView {
     }
     
     func setSelected(selected: Bool, animated: Bool) {
+        
+        if(selected){
+            println("SELECTED")
+        }
+        
         var _animated = animated
         if isSelected == selected {
             _animated = false
@@ -190,6 +195,7 @@ class CalendarDayView: UIView {
             }
         }
         else {
+            circleView?.color = UIColor.whiteColor()
             if self.isOtherMonth == false {
                 textLabel?.textColor = self.calendarManager?.calendarAppearance?.dayTextColor
 //                dotView?.color = self.calendarManager?.calendarAppearance?.dayDotColor

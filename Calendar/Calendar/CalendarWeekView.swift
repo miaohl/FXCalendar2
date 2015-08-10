@@ -74,6 +74,8 @@ class CalendarWeekView: UIView {
             if !self.calendarManager!.calendarAppearance!.isWeekMode! {
                 var comps: NSDateComponents = calendar.components(NSCalendarUnit.CalendarUnitMonth, fromDate: currentDate)
                 var monthIndex: Int = comps.month
+                
+                println("month\(monthIndex)   \(self.currentMonthIndex)")
                 (view as! CalendarDayView).isOtherMonth = (monthIndex != self.currentMonthIndex)
             }
             else {
@@ -88,6 +90,7 @@ class CalendarWeekView: UIView {
 
     func reloadData() {
         for view in daysViews! {
+            //(view as! CalendarDayView).setSelected(false, animated: false)
             (view as! CalendarDayView).reloadData()
         }
     }
